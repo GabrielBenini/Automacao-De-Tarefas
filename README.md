@@ -1,10 +1,10 @@
-# Automacao De Tarefas
+# Task Automation
 
-Projeto de automacao de tarefas, aonde o python le uma tabela de dados encontrada na pasta "produtos.csv" e faz o cadastro dela em um sistema de uma suposta empresa.
+Task automation project, where Python reads a data table found in the "produtos.csv" folder and registers it in a supposed company's system.
 
-Aviso:
-O projeto foi feito em um monitor de resolucao 1920x1080 entao caso execute em um monitor de resolucao diferente, as coordenas x e y serao diferentes e isso fara com que o programa nao funcione corretamente.
+Notice:
+The project was created on a 1920x1080 resolution monitor, so if you run it on a different resolution monitor, the x and y coordinates will be different and this will cause the program to not work correctly.
 
-Para pausar o programa no meio da execucao, basta levar o cursor do mouse para o canto superior esquerdo da tela.
+To pause the program in the middle of execution, simply move the mouse cursor to the top left corner of the screen.
 
-O passo a passo para o processo de construcao do codigo esta no proprio codigo "main.py".
+The step-by-step process for building the code is in the "main.py" code itself.
