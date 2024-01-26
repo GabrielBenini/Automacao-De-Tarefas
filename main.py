@@ -1,7 +1,7 @@
-#Passo a passo do projeto
+#Project step by step
 
 
-# Passo 1 - Entrar no sistema da empresa
+# Step 1 - Login to the company system
     #https://dlp.hashtagtreinamentos.com/python/intensivao/login
 
 import pyautogui
@@ -12,10 +12,10 @@ pyautogui.PAUSE = 0.5
 
 link = 'https://dlp.hashtagtreinamentos.com/python/intensivao/login'
 
-# clicar -> pyautogui.click()
-# escrever -> pyautogui.write()
-# apertar uma tecla -> pyautogui.press()
-# apertar -> pyautogui.hotkey()
+# click -> pyautogui.click()
+# write -> pyautogui.write()
+# press -> pyautogui.press()
+# hotkey -> pyautogui.hotkey()
 # scroll -> pyautogui.scroll()
 
 
@@ -26,7 +26,7 @@ pyautogui.write('opera')
 
 pyautogui.press('enter')
 
-pyautogui.click(x=535, y=51)
+pyautogui.click(x=350, y=64)
 
 pyautogui.hotkey('ctrl' + 'a')
 
@@ -34,72 +34,72 @@ pyautogui.write(link)
 
 pyautogui.press('enter')
 
-#esperar 5 segundos APENAS NESSA LINHA
+#wait 5 seconds ONLY IN THIS LINE
 
 time.sleep(5)
 
 
-# Passo 2 - Fazer login
+# Step 2 - Login
 
 pyautogui.click(x=815, y=388)
 
-# Digitar email
+# Enter email
 
-pyautogui.write('EmailExemplo@gmail.com')
+pyautogui.write('example@gmail.com')
 
 pyautogui.press('tab')
 
-pyautogui.write('SenhaExemplo')
+pyautogui.write('Password123')
 
 pyautogui.click(x=977, y=546)
 
 time.sleep(3)
 
-# Passo 3 - Importar base de dados
+# Step 3 - Import database
 import pandas
 
-tabela = pandas.read_csv('produtos.csv')
-print(tabela)
+table = pandas.read_csv('produtos.csv')
+print(table)
 
 
-for linha in tabela.index: #index sao as linhas, collumns as colunas...
+for linha in table.index: 
 
-    # Passo 4 - Cadastrar um produto
+    # Step 4 - Register a product
 
     pyautogui.click(x=757, y=270)
 
-    # Codigo
-    codigo = tabela.loc[linha, 'codigo']    #[linha, coluna]
-    pyautogui.write(codigo)                 #pyautogui.write(tabela.loc[linha, 'codigo'] ) <-- outra opcao
+    # code
+    code = table.loc[linha, 'code']    #[linha, coluna]
+    pyautogui.write(code)                 #pyautogui.write(tabela.loc[linha, 'codigo'] ) <-- another option
     pyautogui.press('tab')
 
-    # Marca
-    pyautogui.write(tabela.loc[linha, 'marca'])
+    # brend
+    pyautogui.write(table.loc[linha, 'brend'])
     pyautogui.press('tab')
 
-    # Tipo
-    pyautogui.write(tabela.loc[linha, 'tipo'])
+    # type
+    pyautogui.write(table.loc[linha, 'type'])
     pyautogui.press('tab')
 
-    # Categoria
-    pyautogui.write(str(tabela.loc[linha, 'categoria'])) # '1'
+    # category
+    pyautogui.write(str(table.loc[linha, 'category'])) # '1'
     pyautogui.press('tab')
 
-    # Preco unitario
-    pyautogui.write(str(tabela.loc[linha, 'preco_unitario']))
+    # unit_price
+    pyautogui.write(str(table.loc[linha, 'unit_price']))
     pyautogui.press('tab')
 
-    # Custo
-    pyautogui.write(str(tabela.loc[linha, 'custo']))
+    # cost
+    pyautogui.write(str(table.loc[linha, 'cost']))
     pyautogui.press('tab')
 
     #obs
 
-    obs = tabela.loc[linha, 'obs']
-    if not pandas.isna(obs):        #"Se o panda nao estiver vazio"
+    obs = table.loc[linha, 'obs']
+    if not pandas.isna(obs):        #"if panda is not empty"
         pyautogui.write(obs)
 
-    #enviar o produto
+    #send the product
 
     pyautogui.press('tab')
     pyautogui.press('enter')
@@ -107,7 +107,4 @@ for linha in tabela.index: #index sao as linhas, collumns as colunas...
     pyautogui.scroll(1000)
 
 
-
-
-
-# Passo 5 - Repetir isso ate acabar a base de dados
+# Step 5 - Repeat this until the database is finished
